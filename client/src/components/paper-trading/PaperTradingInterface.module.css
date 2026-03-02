@@ -1,0 +1,278 @@
+.container {
+  background: #ffffff;
+  border: 2px solid #ff9800;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0 0 1.5rem 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.orderTypeToggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.toggleButton {
+  padding: 0.75rem;
+  background: #ffffff;
+  color: #718096;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.toggleButton:hover {
+  border-color: #ff9800;
+  color: #ff9800;
+}
+
+.toggleButton.active {
+  background: #ff9800;
+  color: white;
+  border-color: #ff9800;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  color: #1a202c;
+  font-weight: 600;
+}
+
+.loadingIndicator {
+  font-size: 0.75rem;
+  color: #00d4aa;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.autoFilled {
+  font-size: 0.75rem;
+  color: #10b981;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.priceInfo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.priceUp {
+  font-size: 0.75rem;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.priceDown {
+  font-size: 0.75rem;
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.lastUpdate {
+  font-size: 0.7rem;
+  color: #718096;
+  font-weight: 400;
+}
+
+.priceError {
+  font-size: 0.75rem;
+  color: #ef4444;
+  margin-top: 4px;
+}
+
+.inputWithButton {
+  display: flex;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+.inputWithButton .input {
+  flex: 1;
+}
+
+.refreshButton {
+  padding: 0.75rem 1rem;
+  background: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+}
+
+.refreshButton:hover:not(:disabled) {
+  background: #f57c00;
+  transform: scale(1.05);
+}
+
+.refreshButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.refreshButton:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.input,
+.select {
+  padding: 0.75rem;
+  background: #ffffff;
+  color: #1a202c;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  transition: border-color 0.2s;
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: #ff9800;
+  box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.1);
+}
+
+.input::placeholder {
+  color: #a0aec0;
+}
+
+.totalValue {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(255, 152, 0, 0.1);
+  border: 2px solid rgba(255, 152, 0, 0.3);
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+.totalLabel {
+  font-size: 0.875rem;
+  color: #1a202c;
+  font-weight: 600;
+}
+
+.totalAmount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff9800;
+}
+
+.buyAmount {
+  color: #10b981;
+}
+
+.sellAmount {
+  color: #ef4444;
+}
+
+.breakdown {
+  font-size: 0.75rem;
+  color: #718096;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.error {
+  padding: 0.75rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 2px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  color: #ef4444;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.success {
+  padding: 0.75rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 2px solid rgba(16, 185, 129, 0.3);
+  border-radius: 8px;
+  color: #10b981;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.submitButton {
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 0.5rem;
+}
+
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.buyButton {
+  background: #10b981;
+  color: white;
+}
+
+.buyButton:hover:not(:disabled) {
+  background: #059669;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.sellButton {
+  background: #ef4444;
+  color: white;
+}
+
+.sellButton:hover:not(:disabled) {
+  background: #dc2626;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.virtualNote {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #718096;
+  padding: 0.75rem;
+  background: rgba(255, 152, 0, 0.1);
+  border: 1px solid rgba(255, 152, 0, 0.2);
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}

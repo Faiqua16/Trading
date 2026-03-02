@@ -1,0 +1,237 @@
+.container {
+  position: relative;
+  display: inline-block;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: help;
+  position: relative;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  font-size: 12px;
+  color: #ff9800;
+  background: rgba(255, 152, 0, 0.15);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  font-weight: bold;
+}
+
+.trigger:hover .icon {
+  background: rgba(255, 152, 0, 0.25);
+  transform: scale(1.1);
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 99999;
+  background: #ffffff;
+  border: 2px solid #ff9800;
+  border-radius: 8px;
+  padding: 16px;
+  min-width: 280px;
+  max-width: 320px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.2s ease;
+  pointer-events: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tooltip.top {
+  margin-bottom: 12px;
+}
+
+.tooltip.top::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 10px solid transparent;
+  border-top-color: #ff9800;
+  z-index: 99998;
+}
+
+.tooltip.top::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 11px solid transparent;
+  border-top-color: #ffffff;
+  z-index: 99999;
+  margin-top: -2px;
+}
+
+.tooltip.bottom {
+  margin-top: 12px;
+}
+
+.tooltip.bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 10px solid transparent;
+  border-bottom-color: #ff9800;
+  z-index: 99998;
+}
+
+.tooltip.bottom::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 11px solid transparent;
+  border-bottom-color: #ffffff;
+  z-index: 99999;
+  margin-bottom: -2px;
+}
+
+.tooltip.left {
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tooltip.left::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 8px solid transparent;
+  border-left-color: #ffffff;
+}
+
+.tooltip.right {
+  left: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tooltip.right::after {
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 8px solid transparent;
+  border-right-color: #ffffff;
+}
+
+.tooltipHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.tooltipTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff9800;
+  margin: 0;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: #718096;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.closeButton:hover {
+  color: #1a202c;
+}
+
+.tooltipContent {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #2d3748;
+  margin: 0;
+  font-weight: 400;
+}
+
+.tooltipLink {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 12px;
+  color: #ff9800;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.tooltipLink:hover {
+  color: #ff6f00;
+  text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .tooltip {
+    min-width: 240px;
+    max-width: 280px;
+    font-size: 12px;
+  }
+
+  .tooltip.top,
+  .tooltip.bottom {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .tooltip.left,
+  .tooltip.right {
+    left: 50%;
+    top: auto;
+    bottom: calc(100% + 12px);
+    transform: translateX(-50%);
+  }
+
+  .tooltip.left::after,
+  .tooltip.right::after {
+    display: none;
+  }
+
+  .tooltip.left::before,
+  .tooltip.right::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-top-color: #ffffff;
+  }
+}

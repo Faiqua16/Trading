@@ -1,0 +1,377 @@
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  border: 2px solid #10b981;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+  letter-spacing: -0.3px;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 0;
+  font-weight: 500;
+}
+
+.badge {
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+/* Market Composition - LEFT SIDE with real data */
+.composition {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 0 0 auto;
+  min-width: 160px;
+}
+
+.compositionItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #f7fafc;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.compositionItem:hover,
+.compositionItem.active {
+  background: #edf2f7;
+  border-color: #e2e8f0;
+  transform: translateX(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.compositionDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.compositionInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.compositionName {
+  font-size: 13px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.compositionMarketCap {
+  font-size: 10px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.compositionPercent {
+  font-size: 15px;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* Gauge - RIGHT SIDE with accurate proportions */
+.gaugeContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.gaugeSvg {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+}
+
+.gaugeValue {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  animation: valueAppear 1s ease-out;
+}
+
+@keyframes valueAppear {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+.indexValue {
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.indexLabel {
+  font-size: 12px;
+  color: #718096;
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.indexSubLabel {
+  font-size: 14px;
+  color: #2d3748;
+  margin-top: 4px;
+  font-weight: 700;
+}
+
+.hoverTooltip {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 13px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+  animation: fadeInTooltip 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hoverTooltip strong {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.hoverTooltip span {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+@keyframes fadeInTooltip {
+  from { 
+    opacity: 0; 
+    transform: translateX(-50%) translateY(10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(-50%) translateY(0); 
+  }
+}
+
+/* Scale Markers - More attractive */
+.scaleMarkers {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding: 12px 16px;
+  background: #f7fafc;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  position: relative;
+  z-index: 1;
+}
+
+.scaleItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.scaleValue {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.scaleLabel {
+  font-size: 9px;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+/* Loading State */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 16px;
+}
+
+.loadingContainer p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin: 0;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(124, 140, 255, 0.2);
+  border-top-color: #7c8cff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 16px;
+  }
+  
+  .content {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .composition {
+    width: 100%;
+    min-width: unset;
+  }
+  
+  .indexValue {
+    font-size: 40px;
+  }
+  
+  .scaleMarkers {
+    padding: 10px 12px;
+  }
+  
+  .scaleValue {
+    font-size: 12px;
+  }
+  
+  .scaleLabel {
+    font-size: 8px;
+  }
+}
+
+
+/* Dark Mode Support */
+[data-theme="dark"] .card {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .title {
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .subtitle {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .indexValue {
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .indexLabel {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .description {
+  color: #94a3b8;
+}
+
+
+[data-theme="dark"] .compositionItem {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="dark"] .compositionItem:hover,
+[data-theme="dark"] .compositionItem.active {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: #475569;
+}
+
+[data-theme="dark"] .compositionName {
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .compositionMarketCap {
+  color: #64748b;
+}
+
+[data-theme="dark"] .compositionPercent {
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .indexSubLabel {
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .scaleMarkers {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: #334155;
+}
+
+[data-theme="dark"] .scaleValue {
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .scaleLabel {
+  color: #64748b;
+}

@@ -1,0 +1,91 @@
+.inputGroup {
+  margin-bottom: 28px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a202c;
+  margin-bottom: 12px;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  height: 48px;
+  padding: 12px 48px 12px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #e2e8f0;
+  color: #1a202c;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.input::placeholder {
+  color: transparent;
+}
+
+.input:focus {
+  border-bottom-color: #00d4aa;
+  outline: none;
+}
+
+.inputWrapper.error .input {
+  border-bottom-color: #ef4444;
+}
+
+.icon {
+  position: absolute;
+  right: 0;
+  color: #718096;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.helperText {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #718096;
+  line-height: 1.4;
+}
+
+.errorText {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #ef4444;
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] .label {
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .input {
+  border-bottom-color: #475569;
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .input:focus {
+  border-bottom-color: #00d4aa;
+}
+
+[data-theme="dark"] .icon {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .helperText {
+  color: #94a3b8;
+}

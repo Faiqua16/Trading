@@ -1,0 +1,39 @@
+{
+  "name": "tradex-server",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "db:init": "node database/init.js",
+    "db:reset": "node database/init.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "bcrypt": "^5.1.1",
+    "binance-api-node": "^0.13.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "express-validator": "^7.0.1",
+    "geoip-lite": "^1.4.10",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "nodemailer": "^6.9.7",
+    "pg": "^8.11.3",
+    "qrcode": "^1.5.4",
+    "sentiment": "^5.0.2",
+    "speakeasy": "^2.0.0",
+    "ua-parser-js": "^2.0.6"
+  },
+  "devDependencies": {
+    "@jest/globals": "^30.2.0",
+    "fast-check": "^4.3.0",
+    "jest": "^30.2.0"
+  }
+}
